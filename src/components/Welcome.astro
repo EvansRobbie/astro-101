@@ -4,12 +4,12 @@ import background from '../assets/background.svg';
 
 <div class='h-screen w-full relative flex items-center justify-center'>
   <img
-    class='fixed inset-0 w-full h-full object-cover'
+    class='fixed inset-0 w-full h-full object-cover z-0'
     src={background.src}
     alt=''
     fetchpriority='high'
   />
-  <main>
+  <main class='!z-10 relative'>
     <h1>Hello There</h1>
   </main>
 </div>
