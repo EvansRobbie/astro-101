@@ -1,6 +1,5 @@
 ---
 const { title = 'Astro Basics' } = Astro.props;
-import { Image } from 'astro:assets';
 import logo from '../assets/astro.svg';
 ---
 
@@ -19,7 +18,7 @@ import logo from '../assets/astro.svg';
     >
       <nav class='flex items-center justify-between container mx-auto'>
         <a href='/'>
-          <Image src={logo} alt='Astro logo' />
+          <img src={logo.src} alt='Astro logo' />
         </a>
         <ul class='flex items-center gap-4'>
           <li><a href='/'>Home</a></li>
