@@ -1,15 +1,18 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import BlogPost from '../components/BlogPost.astro';
+const title = 'My Astro Learning Blog';
+const allPosts = Object.values(
+  import.meta.glob('../pages/posts/*.md', { eager: true })
+);
 ---
 
-<Layout>
+<Layout title={title}>
   <div>
-    <h1 class='heading'>Blog</h1>
+    <h1 class='heading'>{title}</h1>
     <p>This is the about page</p>
-    <ul>
-      <li><a href='/posts/post-1/'>Post 1</a></li>
-      <li><a href='/posts/post-2/'>Post 2</a></li>
-      <li><a href='/posts/post-3/'>Post 3</a></li>
+    <ul class='grid grid-cols-1 md:grid-cols-2 gap-4 py-8'>
+      {allPosts.map((post: any) => <BlogPost post={post} />)}
     </ul>
   </div>
 </Layout>

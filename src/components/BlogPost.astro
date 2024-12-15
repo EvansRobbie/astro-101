@@ -1,0 +1,15 @@
+---
+const { post } = Astro.props;
+---
+
+<li>
+  <a href={post.url}>
+    <img
+      src={post.frontmatter.image.url}
+      alt={post.frontmatter.image.alt}
+      class='h-[50dvh] object-cover w-full'
+    />
+    <h2>{post.frontmatter.title}</h2>
+    <p>{post.frontmatter.description}</p>
+  </a>
+</li>
