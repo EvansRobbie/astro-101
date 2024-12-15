@@ -1,7 +1,9 @@
 ---
 import '../styles/global.css';
+import Navigation from '../components/Navigation.tsx';
+import Footer from '../components/Footer.astro';
+
 const { title = 'Astro Basics' } = Astro.props;
-import logo from '../assets/astro.svg';
 ---
 
 <!doctype html>
@@ -14,23 +16,11 @@ import logo from '../assets/astro.svg';
     <title>{title} - Blog</title>
   </head>
   <body>
-    <header
-      class='z-10 sticky top-0 bg-white/20 backdrop-blur backdrop-filter h-20 flex items-center'
-    >
-      <nav class='flex items-center justify-between container mx-auto'>
-        <a href='/'>
-          <img src={logo.src} alt='Astro logo' />
-        </a>
-        <ul class='flex items-center gap-4'>
-          <li><a href='/'>Home</a></li>
-          <li><a href='/about/'>About</a></li>
-          <li><a href='/blog/'>Blog</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main class='container mx-auto'>
+    <Navigation client:load />
+    <main class='container mx-auto min-h-screen'>
       <slot />
     </main>
+    <Footer />
   </body>
 </html>
 
