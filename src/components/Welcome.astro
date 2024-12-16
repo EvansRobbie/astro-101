@@ -1,13 +1,17 @@
 ---
 import background from '../assets/background.svg';
+import Greeting from './Greetings';
 ---
 
-<div class='h-screen w-full relative flex items-center justify-center'>
+<div class='w-full relative flex items-center justify-center'>
   <img
     class='fixed inset-0 w-full h-full object-cover z-0'
     src={background.src}
     alt=''
     fetchpriority='high'
   />
-  <main class='!z-10 relative'></main>
+  <main class='!z-10 relative'>
+    <Greeting messages={['Hi', 'Hello', 'Howdy', 'Hey there']} />
+    <Greeting client:load messages={['Hej', 'Hallo', 'Hola', 'Habari']} />
+  </main>
 </div>
