@@ -48,6 +48,9 @@ export default function Navigation() {
                 <li>
                   <a href='/blog/'>Blog</a>
                 </li>
+                <li>
+                  <a href='/tags/'>Tags</a>
+                </li>
               </>
             )}
           </ul>
@@ -87,7 +90,7 @@ export default function Navigation() {
               initial={{ opacity: 0, filter: 'blur(5px)' }}
               animate={{ opacity: 1, filter: 'blur(0px)' }}
               exit={{ opacity: 0, filter: 'blur(5px)' }}
-              className='fixed top-0 left-0 w-full h-screen border z-20 bg-white flex items-center justify-center'
+              className='fixed top-0 left-0 w-full h-screen border z-20 bg-white flex md:hidden items-center justify-center '
             >
               <motion.ul
                 className='space-y-8'
@@ -103,6 +106,9 @@ export default function Navigation() {
                 </motion.li>
                 <motion.li variants={itemVariant}>
                   <a href='/blog/'>Blog</a>
+                </motion.li>
+                <motion.li variants={itemVariant}>
+                  <a href='/tags/'>Tags</a>
                 </motion.li>
               </motion.ul>
             </motion.div>

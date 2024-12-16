@@ -2,7 +2,7 @@
 const { post } = Astro.props;
 ---
 
-<li>
+<li class='space-y-3'>
   <a href={post.url}>
     <img
       src={post.frontmatter.image.url}
@@ -11,5 +11,14 @@ const { post } = Astro.props;
     />
     <h2>{post.frontmatter.title}</h2>
     <p>{post.frontmatter.description}</p>
+    <div class='flex flex-wrap items-start space-x-4'>
+      {
+        post.frontmatter.tags.map((tag: string) => (
+          <p class='!text-[#00539F] border px-6 py-1.5 bg-[#F8FCFD] rounded-xl border-dotted border-[#a1a1a1]'>
+            <a href={`/tags/${tag}`}>{tag}</a>
+          </p>
+        ))
+      }
+    </div>
   </a>
 </li>
